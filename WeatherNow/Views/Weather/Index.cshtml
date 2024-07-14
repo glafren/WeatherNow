@@ -1,0 +1,19 @@
+﻿@model WeatherNow.Entities.WeatherResponse
+
+<h1>Hava Durumu</h1>
+
+<form method="get">
+    <input type="text" name="city" placeholder="Şehir adı girin" />
+    <button type="submit">Göster</button>
+</form>
+
+@if (Model != null)
+{
+    <div>
+        <h2>@Model.Name</h2>
+        <p>Sıcaklık: @Model.Main.Temp °C</p>
+        <p>Hissedilen: @Model.Main.Feels_Like °C</p>
+        <p>Nem: @Model.Main.Humidity %</p>
+        <p>Durum: @Model.Weather.First().Description</p>
+    </div>
+}
